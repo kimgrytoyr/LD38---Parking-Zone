@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour {
 
 	public void Parked() {
 		System.TimeSpan ts = new System.TimeSpan (0, 0, (int)(Time.time - startTime));
-		if (ts.TotalSeconds < highscore) {
+		if (ts.TotalSeconds < highscore || highscore == 0f) {
 			PlayerPrefs.SetFloat ("highscore", (float)ts.TotalSeconds);
 		}
 
